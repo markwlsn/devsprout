@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'core/theme/app_theme.dart';
-import 'screens/home/home_screen.dart';
-
-/// DevSprout
-///
-/// Learning platform for:
-/// - Java
-/// - Python
-/// - C#
-/// - JavaScript
-///
-/// Day 1 Goal:
-/// Launch app successfully.
+import 'screens/main_layout_screen.dart';
 
 void main() {
   runApp(const DevSproutApp());
@@ -24,13 +11,14 @@ class DevSproutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
       title: 'DevSprout',
-
-      theme: AppTheme.lightTheme,
-
-      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'SF Pro Display', // Apple styling standard
+        primaryColor: const Color(0xFF0071E3),
+        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+      ),
+      home: const MainLayoutScreen(), // Launches our master navigation shell
     );
   }
 }
